@@ -9,7 +9,7 @@ public class FA2022_Adult_Caddell
 	// Constructors
 	public FA2022_Adult_Caddell()
 	{
-		name = null;
+		name = "";
 		height = 0;
 		weight = 0;
 	}
