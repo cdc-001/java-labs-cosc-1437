@@ -45,7 +45,7 @@ public class FA2022_Investor_Caddell
 	{
 		annualDiv = div;
 	}
-		// Create accessor methods
+	// Create accessor methods
 	public String getName()
 	{
 		return name;
