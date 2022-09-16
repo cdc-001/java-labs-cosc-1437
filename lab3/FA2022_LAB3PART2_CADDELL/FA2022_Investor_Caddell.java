@@ -67,8 +67,6 @@ public class FA2022_Investor_Caddell
 	}
 	
 	// Create operator methods
-	
-	// This method calculates total amount invested
 	public float calcTotalInvest()
 	{
 		return pricePerShare * numOfShares;
@@ -88,17 +86,17 @@ public class FA2022_Investor_Caddell
 	{
 		String str;
 		
-		str = "FA2022_ShareInvestmentCalculator_Caddell.java"
-				+ "FALL 2022 semester – Cory Caddell"
-				+ "---------------------------------------------"
-				+ String.format("Name of Investor:           		%15s", name) + "\n"
-				+ String.format("Number of shares:           		%15d", numOfShares) + "\n"
-				+ String.format("Price of each share:        		%15.2f", pricePerShare) + "\n"
-				+ String.format("Percentage of yearly dividend:     %15.2f", annualDiv) + "\n"
-				+ String.format("Money invested:    				%15.2f", calcTotalInvest()) + "\n"
-				+ String.format("Interest Amount:    				%15.2f", calcInterest()) + "\n"
-				+ "---------------------------------------------"
-				+ String.format("Total money at the end of year:    %15.2f", calcTotalReturn()) + "\n";
+		str = "FA2022_ShareInvestmentCalculator_Caddell.java\n"
+				+ "FALL 2022 semester – Cory Caddell\n"
+				+ "---------------------------------------------\n"
+				+ String.format("Name of investor:             %15s", name) + "\n"
+				+ String.format("Number of shares:             %15d", numOfShares) + "\n"
+				+ String.format("Price of each share:          %15.2f", pricePerShare) + "\n"
+				+ String.format("Percentage of yearly dividend:%15.2f%%", annualDiv * 100) + "\n"
+				+ String.format("Money invested:    	      %15.2f", calcTotalInvest()) + "\n"
+				+ String.format("Interest Amount:    	      %15.2f", calcInterest()) + "\n"
+				+ "---------------------------------------------\n"
+				+ String.format("Total money at the end of year:%14.2f", calcTotalReturn()) + "\n";
 		
 		return str;
 	}
