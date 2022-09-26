@@ -1,4 +1,4 @@
-// File Name: FA2022_YourBMI_Rate_Caddell.java
+//FA2022_YourBMI_Rate_Caddell.java
 
 
 import java.util.Scanner;
@@ -9,9 +9,9 @@ public class FA2022_YourBMI_Rate_Caddell
 		// Declare Variables
 		String name;
 		int height;
-		int weight;
+		float weight;
 		
-		// Read input from keyboard
+		// Create Scanner object to read input from keyboard
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Enter the following information:");
 		
@@ -26,8 +26,10 @@ public class FA2022_YourBMI_Rate_Caddell
 		
 		keyboard.close();
 		
-		// Display output on screen
+		// Create object to calculate and display BMI
 		FA2022_Adult_Caddell bmi = new FA2022_Adult_Caddell(name, height, weight);	
+		
+		// Display output to screen
 		System.out.println(bmi.toString());
 	}
 

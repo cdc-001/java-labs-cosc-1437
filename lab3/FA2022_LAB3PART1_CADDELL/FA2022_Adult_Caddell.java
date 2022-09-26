@@ -1,78 +1,76 @@
+// FA2022_Adult_Caddell.java
 
 public class FA2022_Adult_Caddell 
 {
-	// Fields/DataMember/Attribute
+	//data members
 	private String name;
 	private int height;
-	private int weight;
+	private float weight;
 	
-	// Constructors
+	//no-argument constructor
 	public FA2022_Adult_Caddell()
 	{
 		name = "";
 		height = 0;
-		weight = 0;
+		weight = 0.0f;
 	}
 	
-	public FA2022_Adult_Caddell(String nme, int hght, int wght)
+	//parameterized constructor
+	public FA2022_Adult_Caddell(String n, int h, float w)
 	{
-		name = nme;
-		height = hght;
-		weight = wght;
+		name = n;
+		height = h;
+		weight = w;
 	}
 	
-	// Mutator Methods
-	public void setHeight(int hght)
+	//the following are mutator methods with the names starting "set"
+	public void setName(String n)
 	{
-		height = hght;
+		name = n;
 	}
-	
-	public void setWeight(int wght)
+	public void setHeight(int h)
 	{
-		weight = wght;
+		height = h;
 	}
 	
-	// Accessor Methods
+	public void setWeight(int w)
+	{
+		weight = w;
+	}
+	
+	//the following are accessor methods with the name starting "get"
 	public String getName()
 	{
 		return name;
 	}
-	
 	public int getHeight()
 	{
 		return height;
 	}
-	
-	public int getWeight()
+	public float getWeight()
 	{
 		return weight;
 	}
 	
-	// Operator Methods
-	
-	public float calculateBMI() 
+	//method to calculate the weight	
+	public float calculateBMIRate() 
 	{		
-		return (weight * 703) / (height * height);
+		float BMI = (weight * 703) / (height * height);
+		return BMI;
 	}
 	
+	//method toString to create the output string and return
 	public String toString()
 	{
-		String str;
-		
-		str = "---------------------------------------------\n"
-			+ "File: FA2022_YourBMI_Rate_Caddell.java\n"
-			+ "Your BMI Calculator – Caddell\n"
-			+ "Standard BMI:            18.5 – 24.9\n"
-			+ "---------------------------------------------\n"
-			+ String.format("Name:                %15s", name) + "\n"
-			+ String.format("Height:              %15s", height) + "\n"
-			+ String.format("Weight:              %15s", weight) + "\n"
-			+ "---------------------------------------------\n"
-			+ String.format("BMI:                 %15s", calculateBMI()) + "\n";
-		
-		return str;
-	}
-	
-	
-	
+		return "---------------------------------------------\n" +
+				"File: FA2022_YourBMI_Rate_Caddell.java\n" + 
+				"Calculate Your BMI Rate – Caddell\n" +
+				"Standard BMI:            18.5 - 24.9\n" +
+			    "---------------------------------------------\n" +
+				String.format("%-15s%25s\n", "Name: ", name) +
+				String.format("%-15s%25d\n", "Height: ", height) +
+				String.format("%-15s%25.2f\n", "Weight: ", weight) +
+				"---------------------------------------------\n" +
+				String.format("%-15s%25.2f\n", "Your BMI Rate: ", calculateBMIRate()); //<==this is the way the get BMI rate
+	}	
 }

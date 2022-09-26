@@ -1,4 +1,4 @@
-// File Name: FA2022_Investor_Caddell.java
+// FA2022_Investor_Caddell.java
 
 public class FA2022_Investor_Caddell 
 {
@@ -25,82 +25,74 @@ public class FA2022_Investor_Caddell
 		annualDiv = div;
 	}
 	
-	// Create mutator methods
+	// Create mutator methods with the name starting "set"
 	public void setName(String nam)
 	{
 		name = nam;
 	}
-	
 	public void setNumOfShares(int numShares)
 	{
 		numOfShares = numShares;
 	}
-	
 	public void setPricePerShare(float priceShare)
 	{
 		pricePerShare = priceShare;
 	}
-	
 	public void setAnnualDiv(float div)
 	{
 		annualDiv = div;
 	}
-	// Create accessor methods
+	
+	// Create accessor methods with the name starting "get"
 	public String getName()
 	{
 		return name;
 	}
-	
 	public int getNumOfShares()
 	{
 		return numOfShares;
 	}
-	
 	public float getPricePerShare()
 	{
 		return pricePerShare;
 	}
-	
 	public float getAnnualDiv()
 	{
 		return annualDiv;
 	}
 	
-	// Create operator methods
+	// Method to calculate initial investment total
 	public float calcTotalInvest()
 	{
 		return pricePerShare * numOfShares;
 	}
 	
+	// Method to calculate interest
 	public float calcInterest()
 	{
 		return calcTotalInvest() * annualDiv;
 	}
 	
+	// Method to calculate ending investment total
 	public float calcTotalReturn()
 	{
 		return calcTotalInvest() + calcInterest();
 	}
 	
+	// Method toString to create output string and return
 	public String toString()
-	{
-		String str;
-		
-		str = "FA2022_ShareInvestmentCalculator_Caddell.java\n"
+	{	
+		return "FA2022_ShareInvestmentCalculator_Caddell.java\n"
 				+ "FALL 2022 semester – Cory Caddell\n"
-				+ "---------------------------------------------\n"
-				+ String.format("Name of investor:             %15s", name) + "\n"
-				+ String.format("Number of shares:             %15d", numOfShares) + "\n"
-				+ String.format("Price of each share:          %15.2f", pricePerShare) + "\n"
-				+ String.format("Percentage of yearly dividend:%15.2f%%", annualDiv * 100) + "\n"
-				+ String.format("Money invested:    	      %15.2f", calcTotalInvest()) + "\n"
-				+ String.format("Interest Amount:    	      %15.2f", calcInterest()) + "\n"
-				+ "---------------------------------------------\n"
-				+ String.format("Total money at the end of year:%14.2f", calcTotalReturn()) + "\n";
-		
-		return str;
-	}
-	
-	
+				+ "----------------------------------------------\n"
+				+ String.format("%-31s%15s\n", "Name of investor:", name)
+				+ String.format("%-31s%15d\n", "Number of shares:", numOfShares)
+				+ String.format("%-31s%15.2f\n", "Price of each share:", pricePerShare)
+				+ String.format("%-31s%15.2f%%\n", "Percentage of yearly dividend:", annualDiv * 100)
+				+ String.format("%-31s%15.2f\n", "Money invested:", calcTotalInvest())
+				+ String.format("%-31s%15.2f\n", "Interest Amount:", calcInterest())
+				+ "----------------------------------------------\n"
+				+ String.format("%-31s%15.2f\n", "Total money at the end of year:", calcTotalReturn()); 
 
+	}
 }
