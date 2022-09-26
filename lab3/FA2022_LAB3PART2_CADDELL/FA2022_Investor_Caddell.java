@@ -8,7 +8,7 @@ public class FA2022_Investor_Caddell
 	private float pricePerShare;
 	private float annualDiv;
 	
-	// Create constructors
+	// No-argument constructor
 	public FA2022_Investor_Caddell()
 	{
 		name = "";
@@ -17,6 +17,7 @@ public class FA2022_Investor_Caddell
 		annualDiv = 0.0f;
 	}
 	
+	// Parameterized constructor accepting name, number of share, share price, and div. as arguments.
 	public FA2022_Investor_Caddell(String nam, int numShares, float priceShare, float div)
 	{
 		name = nam;
@@ -67,13 +68,13 @@ public class FA2022_Investor_Caddell
 		return pricePerShare * numOfShares;
 	}
 	
-	// Method to calculate interest
+	// Method to calculate annual interest
 	public float calcInterest()
 	{
-		return calcTotalInvest() * annualDiv;
+		return calcTotalInvest() * annualDiv / 100;
 	}
 	
-	// Method to calculate ending investment total
+	// Method to calculate ending investment total after one year
 	public float calcTotalReturn()
 	{
 		return calcTotalInvest() + calcInterest();
@@ -82,13 +83,14 @@ public class FA2022_Investor_Caddell
 	// Method toString to create output string and return
 	public String toString()
 	{	
-		return "FA2022_ShareInvestmentCalculator_Caddell.java\n"
+		return "----------------------------------------------\n"
+				+ "FA2022_ShareInvestmentCalculator_Caddell.java\n"
 				+ "FALL 2022 semester – Cory Caddell\n"
 				+ "----------------------------------------------\n"
 				+ String.format("%-31s%15s\n", "Name of investor:", name)
 				+ String.format("%-31s%15d\n", "Number of shares:", numOfShares)
 				+ String.format("%-31s%15.2f\n", "Price of each share:", pricePerShare)
-				+ String.format("%-31s%15.2f%%\n", "Percentage of yearly dividend:", annualDiv * 100)
+				+ String.format("%-31s%15.2f%%\n", "Percentage of yearly dividend:", annualDiv)
 				+ String.format("%-31s%15.2f\n", "Money invested:", calcTotalInvest())
 				+ String.format("%-31s%15.2f\n", "Interest Amount:", calcInterest())
 				+ "----------------------------------------------\n"

@@ -1,4 +1,4 @@
-// File name: FA2022_ShareInvestmentCalculator_Caddell.java
+// FA2022_ShareInvestmentCalculator_Caddell.java
 
 import java.util.Scanner;
 public class FA2022_ShareInvestmentCalculator_Caddell 
@@ -11,11 +11,9 @@ public class FA2022_ShareInvestmentCalculator_Caddell
 		float pricePerShare;
 		float annualDiv;
 		
-		// Declare objects
-		FA2022_Investor_Caddell investor;
+		// Create scanner object and read user input
 		Scanner keyboard = new Scanner(System.in);
 		
-		// Request and read user input
 		System.out.println("Enter the following information:");
 		
 		System.out.print("  Name: ");
@@ -27,16 +25,16 @@ public class FA2022_ShareInvestmentCalculator_Caddell
 		System.out.print("  Price of each share: ");
 		pricePerShare = keyboard.nextFloat();
 		
-		System.out.print("  Percentage of yearly dividend (in decimal format): ");
+		System.out.print("  Percentage of yearly dividend: ");
 		annualDiv = keyboard.nextFloat();
 		
 		keyboard.close();
 		
-		// Create investor object
-		investor = new FA2022_Investor_Caddell(name, numOfShares, pricePerShare, annualDiv);
+		// Create investor object to calculate and display ending balance
+		FA2022_Investor_Caddell investor = new FA2022_Investor_Caddell(name, numOfShares, pricePerShare, annualDiv);
 		
 		// Display output to screen
-		System.out.println("\n" + investor);		
+		System.out.println(investor.toString());		
 	}
 
 }
