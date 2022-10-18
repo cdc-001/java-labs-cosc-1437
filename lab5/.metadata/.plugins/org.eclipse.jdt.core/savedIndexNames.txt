@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+/home/cory/repos/dcc/java/java-labs-cosc-1437/lab5/.metadata/.plugins/org.eclipse.jdt.core
