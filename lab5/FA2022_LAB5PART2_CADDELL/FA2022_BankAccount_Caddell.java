@@ -72,14 +72,14 @@ public class FA2022_BankAccount_Caddell
 	/** Method to display current interest rate. */
 	public String checkInterestRate()
 	{
-		return "FA2022_BankService_Smith.java\n"
-				 + "ONLINE BANK – JAMES SMITH\n"
-			   	 + "-------------------------------------------"
-			   	 + "INTEREST RATET"
+		return "FA2022_BankService_Caddell.java\n"
+				 + "ONLINE BANK – CORY CADDELL\n"
+			   	 + "-------------------------------------------\n"
+			   	 + "INTEREST RATE\n"
 			   	 + String.format("%-20s%20s\n", "Account Number: ", accountNumber)
 			   	 + String.format("%-20s%20s\n", "Account Name: ", name)
-			   	 + String.format("%-20s%20s\n", "Balance: ", currentBalance())
-			   	 + String.format("%-20s%20s\n", "Interest Rate: ", interestRate)
+			   	 + String.format("%-20s%20.2f\n", "Balance: ", currentBalance())
+			   	 + String.format("%-20s%20.2f%%\n", "Interest Rate: ", interestRate)
 			   	 + "-------------------------------------------\n";
 	}
 	
