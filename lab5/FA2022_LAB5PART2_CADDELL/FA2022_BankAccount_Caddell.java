@@ -90,13 +90,13 @@ public class FA2022_BankAccount_Caddell
 		
 		return "FA2022_BankService_Caddell.java\n"
 			 + "ONLINE BANK – Cory Caddell\n"
-		   	 + "-------------------------------------------"
-		   	 + "DEPOSIT"
+		   	 + "-------------------------------------------\n"
+		   	 + "DEPOSIT\n"
 		   	 + String.format("%-20s%20s\n", "Account Number: ", accountNumber)
 		   	 + String.format("%-20s%20s\n", "Account Name: ", name)
-		   	 + String.format("%-20s%20s\n", "Balance: ", currentBalance() - deposit)
-		   	 + String.format("%-20s%20s\n", "Deposit: ", deposit)	   	 
-		   	 + String.format("%-20s%20s\n", "New Balance: ", currentBalance())
+		   	 + String.format("%-20s%20.2f\n", "Balance: ", currentBalance() - deposit)
+		   	 + String.format("%-20s%20.2f\n", "Deposit: ", deposit)	   	 
+		   	 + String.format("%-20s%20.2f\n", "New Balance: ", currentBalance())
 		   	 + "-------------------------------------------\n";
 	}
 	
