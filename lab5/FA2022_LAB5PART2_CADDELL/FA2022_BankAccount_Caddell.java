@@ -19,12 +19,13 @@ public class FA2022_BankAccount_Caddell
 	}
 	
 	/** Parameterized constructor method accepting name, account number, and interest rate as arguments. */
-	public FA2022_BankAccount_Caddell(String n, String a, float i, float b)
+	public FA2022_BankAccount_Caddell(String n, String a, float b, float i)
 	{
 		name = n;
 		accountNumber = a;
-		interestRate = i;
 		openingBalance = b;
+		interestRate = i;
+
 	}
 	
 	/** Mutator method to change interest rate. */
@@ -43,14 +44,14 @@ public class FA2022_BankAccount_Caddell
 	/** Method to display new account information. */
 	public String openNewAccount()
 	{
-		return "FA2022_BankService_Smith.java\n"
-			 + "ONLINE BANK – JAMES SMITH\n"
-		   	 + "-------------------------------------------"
-		   	 + "NEW ACCOUNT"
+		return "FA2022_BankService_Caddell.java\n"
+			 + "ONLINE BANK – Cory Caddell\n"
+		   	 + "-------------------------------------------\n"
+		   	 + "NEW ACCOUNT\n"
 		   	 + String.format("%-20s%20s\n", "Account Number: ", accountNumber)
 		   	 + String.format("%-20s%20s\n", "Account Name: ", name)
-		   	 + String.format("%-20s%20s\n", "Balance: ", openingBalance)
-		   	 + String.format("%-20s%20s\n", "Interest Rate: ", interestRate)
+		   	 + String.format("%-20s%20.2f\n", "Balance: ", openingBalance)
+		   	 + String.format("%-20s%20.2f%%\n", "Interest Rate: ", interestRate)
 		   	 + "-------------------------------------------\n";
 
 	}
@@ -138,7 +139,7 @@ public class FA2022_BankAccount_Caddell
 	public String bankStatement()
 	{
 		float interest;
-		interest = currentBalance() + currentBalance() * interestRate;
+		interest = currentBalance() + currentBalance() * interestRate * 100;
 		
 		return "FA2022_BankService_Caddell.java\n"
 		 + "ONLINE BANK – Cory Caddell\n"
@@ -152,15 +153,6 @@ public class FA2022_BankAccount_Caddell
 	   	 + String.format("%-20s%20s\n", "Interest Amount: ", interest)
 	   	 + String.format("%-20s%20s\n", "New Balance: ", currentBalance() + interest)
 	   	 + "-------------------------------------------\n";
-	}
-		
-
-	
-	
-				
-	
-	
-
-	
+	}	
 
 }
