@@ -52,20 +52,20 @@ public class FA2022_BankAccount_Caddell
 		   	 + String.format("%-20s%20s\n", "Account Name: ", name)
 		   	 + String.format("%-20s%20.2f\n", "Balance: ", openingBalance)
 		   	 + String.format("%-20s%20.2f%%\n", "Interest Rate: ", interestRate)
-		   	 + "-------------------------------------------\n";
+		   	 + "-------------------------------------------";
 
 	}
 	
 	/** Method to display current balance. */
 	public String checkCurrentBalance()
 	{
-		return "FA2022_BankService_Smith.java\n"
-				 + "ONLINE BANK – JAMES SMITH\n"
-			   	 + "-------------------------------------------"
-			   	 + "CURRENT ACCOUNT"
+		return "FA2022_BankService_Caddell.java\n"
+				 + "ONLINE BANK – CORY CADDELL\n"
+			   	 + "-------------------------------------------\n"
+			   	 + "CURRENT ACCOUNT\n"
 			   	 + String.format("%-20s%20s\n", "Account Number: ", accountNumber)
 			   	 + String.format("%-20s%20s\n", "Account Name: ", name)
-			   	 + String.format("%-20s%20s\n", "Balance: ", currentBalance())
+			   	 + String.format("%-20s%20.2f\n", "Balance: ", currentBalance())
 			   	 + "-------------------------------------------\n"; 
 	}
 	

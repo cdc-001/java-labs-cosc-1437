@@ -10,12 +10,13 @@ public class FA2022_BankService_Caddell
 		String name;
 		String address;
 		String accountNumber  = "12323423423";				//Ned to randomize this!!!
-		float balance;
+		float balance = 0;
 		float interestRate;
 		float interest;
 		float deposit;
 		float withdraw;
 		
+		FA2022_BankAccount_Caddell account = null;
 		Scanner keyboard = new Scanner(System.in);
 		
 		
@@ -25,7 +26,7 @@ public class FA2022_BankService_Caddell
 			// Display menu and read task selection		
 			System.out.print("FA2022_BankService_Caddell.java\n"
 					+ "ONLINE BANK - CORY CADDELL\n"
-					+ "-------------------------------------------------\n"
+					+ "-------------------------------------------\n"
 					+ "1. Open New Account\n"
 					+ "2. Check Current Balance\n"
 					+ "3. Change Interest Rate \n"
@@ -33,15 +34,23 @@ public class FA2022_BankService_Caddell
 					+ "5. Withdrawal\n"
 					+ "6. Bank Statement\n"
 					+ "0. Exit\n"
-					+ "Enter your selection: ");						//Add invalid selection!!!
+					+ "Enter your selection: ");						
 			
 			// Read input from keyboard
 			selection = keyboard.nextInt();
 			
+			// Validate selection
+			while (selection < 0 || selection > 6)
+			{
+				System.out.print("Invalid selection. Choose from the above menu: ");
+				selection = keyboard.nextInt();
+			}
+			
 			// Perform task
 			switch (selection)
 			{
-			case 1:		//Open new checking account
+			//Open new checking account
+			case 1:		
 				System.out.println("\nEnter the following information: ");
 				keyboard.nextLine();
 				
@@ -59,21 +68,37 @@ public class FA2022_BankService_Caddell
 				
 				do 
 				{
+					//Validate opening balance
 					if(balance < 20)
 					{
 						System.out.print("\nTo open a new account, the money amount should be at least $20.00.\n"
-								+ "Enter your balance or select 0 to return to the main menu: ");
+								+ "Enter your balance or enter '0' to return to the main menu: ");
 						balance = keyboard.nextInt();
 					}
 					else
 					{
-						FA2022_BankAccount_Caddell account = new FA2022_BankAccount_Caddell(name, accountNumber, balance, interestRate);
+						account = new FA2022_BankAccount_Caddell(name, accountNumber, balance, interestRate);
 						System.out.println("\n" + account.openNewAccount());
 						break;
 					}
 				}while (balance != 0);
+				System.out.println();				                       //Add a space before returning to main menu.
 				break;
+			//Check current balance
+			case 2:
+				//Validate an account has been created
+				if( account == null)
+				{
+					System.out.println("\nSelect task 1 to create a new account before selecting this task.\n");
+					break;
+				}
+				else
+				{
+					System.out.println("\n" + account.checkCurrentBalance());
+				}
 			}
 		}while (selection != 0);
+		
+		System.out.println("\nThank you for banking with ONLINE BANK.  Have a good day!");
 	}
 }
