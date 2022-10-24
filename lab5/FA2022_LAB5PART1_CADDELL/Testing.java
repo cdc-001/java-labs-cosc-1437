@@ -5,12 +5,14 @@ public class Testing
 {
 	public static void main(String[] args) throws IOException 
 	{
-		// Question 1
+		Scanner keyboard = new Scanner(System.in);
 		
+		// Question 1
 		int numIndex = 3,				// Base value
 		 	numIncrement = 3,			// Increase in base value.  Increment will increase by one after each loop.
-		 	size = 8;
+		 	size = 8;					// Number of iterations.
 		int	numSum = numIndex;			// Sum of all iterations of base number.
+		
 		for (int i = 0; i < size; i++)
 		{				
 			System.out.print(numIndex + ", ");
@@ -24,34 +26,37 @@ public class Testing
 		// Question 2A
 		
 		int count = 0;
-		int number = 0, temp = 1, product = 1;
+		int number, temp = 1, product = 1;
 		
-		Scanner keyboard = new Scanner(System.in);
 		
 		while (product <= 3000 )
-		{
-			temp = number;
-			
+		{	
 			System.out.print("Enter a number: ");
 			number = keyboard.nextInt();
 			
-			product = temp * number;
-		
+			product *= number;
+			temp = product / number;
+	
 			count++;
+			
+			if (product > 3000)	//Count would need to be initialized with value of zero to display outside of loop.
+			{
+			System.out.println("At count = " + count + "\n" +
+					"Previous = " + temp + "\n" +
+					"number =  "  + number + "\n" +
+					"product = " + product + "\n\n");
+			}
 		}
 		
-		System.out.println("At count = " + count + "\n" +
-				"Previous = " + temp + "\n" +
-				"number =  "  + number + "\n" +
-				"product = " + product + "\n\n");
+
 		
 		// Question 2B - The while loop will run zero time if product is initialized with a value of 3200.
 		
 		// Question 3A
 		
 		count = 0;
-		number = 0; 
-		temp = 1;
+		number = 0;
+		temp = 1 ;
 		product = 1;
 		
 		do
@@ -59,9 +64,9 @@ public class Testing
 			System.out.print("Enter a number: ");
 			number = keyboard.nextInt();
 			
-			product = temp * number;
+			product *= number;
 			
-			temp = number;
+			temp = product / number;
 		
 			count++;
 		} while (product <= 3000 );
@@ -97,11 +102,11 @@ public class Testing
 		
 		// Open file
 		
-		FileWriter outFile = new FileWriter("student.txt");
+		PrintWriter outFile = new PrintWriter("student.txt");
 		
 		// Write to file
 		
-		outFile.write(studentID + " - " + studentName + " - " + letterGrade);
+		outFile.println(studentID + " - " + studentName + " - " + letterGrade);
 		
 		// Close file
 		
@@ -113,8 +118,7 @@ public class Testing
 		if (!file.exists())
 		{
 			System.out.println("File does not exist");
-			return;
-		}
+			System.exit(0);		}
 		
 		// Open file
 		
@@ -137,27 +141,31 @@ public class Testing
 		int selection;
 		do
 		{
-			System.out.print("\nMENU\n1.Task 1 \n2.Task 2 \n3.Task 3\n 0. Exit\n"
+			System.out.print("\nMENU\n1.Task 1 \n2.Task 2 \n3.Task 3\n0. Exit\n"
 					+ "Type a number 1, 2, 3 to select a task or 0 to Exit: ");
 			selection = keyboard.nextInt();
 			
 			switch (selection)
 			{
-			case 1:
-				System.out.println("Do task 1.");
-				break;
-			case 2:
-				System.out.println("Do task 2");
-				break;
-			case 3:
-				System.out.println("Do task 3");
-				break;
-			default:
-				System.out.println("Invalid task, choose from 1, 2, 3, or 0");
-				break;
+				case 0:
+					System.out.println("Exit the menu");
+					break;
+				case 1:
+					System.out.println("Do task 1.");
+					break;
+				case 2:
+					System.out.println("Do task 2");
+					break;
+				case 3:
+					System.out.println("Do task 3");
+					break;
+				default:
+					System.out.println("Invalid task, choose from 1, 2, 3, or 0");
+					break;
 			}
 			
 		}while(selection != 0);
+
 		
 		
 		
