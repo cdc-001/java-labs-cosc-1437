@@ -1,12 +1,15 @@
 //FA2022_Product_Caddell.java
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class FA2022_Product_Caddell 
 {
 	private int SIZE = 3;
 	
 	private String productID;
 	private String productName;
-	private float[] productUnits;
+	private int[] productUnits;
 	private float[] productUnitPrice;
 	
 	/** No-argument constructor */
@@ -14,12 +17,12 @@ public class FA2022_Product_Caddell
 	{		
 		productID = "";
 		productName = "";
-		productUnits = new float[SIZE];
+		productUnits = new int[SIZE];
 		productUnitPrice = new float[SIZE];
 	}
 	
 	/** Parameterized constructor excepting product ID, name, units, and unit price as arguments. */
-	public FA2022_Product_Caddell(String id, String n, float[] u, float[] p)
+	public FA2022_Product_Caddell(String id, String n, int[] u, float[] p)
 	{
 		productID = id;
 		productName = n;
@@ -63,10 +66,13 @@ public class FA2022_Product_Caddell
 	/** Method to display object data to screen */
 	public String toString()
 	{
+		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		Date date = new Date();
+		
 		return "FA2022_SaleProduct_Caddell.java\n"
 			  + "SALE PRODUCT REPORT – CORY CADDELL\n"
 			  + "----------------------------------------------------------\n"
-			  + String.format("Sale Day: \n")
+			  + String.format("Sale Day: %s\n", formatter.format(date))
 			  + String.format("Product ID: %s\n", productID)
 			  + "----------------------------------------------------------\n"
 			  + String.format("%-15s%15s%15s%15s\n", "SIZE", "PRICE", "UNITS", "MONEY")
@@ -77,9 +83,5 @@ public class FA2022_Product_Caddell
 			  + String.format("%-15s%15s%15s%15.2f\n", "Subtotal:", "", "", calculateSaleMoney())
 			  + String.format("%-15s%15s%15s%15.2f\n", "Sales tax:", "", "", calculateSalesTax())
 			  + String.format("%-15s%15s%15s%15.2f\n", "Total", "", "", calculateTotalSaleMoney());
-;
-
-
-
 	}
 }
