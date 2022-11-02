@@ -9,16 +9,14 @@ public class FA2022_Product_Caddell
 	
 	private String productID;
 	private String productName;
-	private int[] productUnits;
-	private float[] productUnitPrice;
+	private int[] productUnits = new int[SIZE];
+	private float[] productUnitPrice = new float[SIZE];
 	
 	/** No-argument constructor */
 	public FA2022_Product_Caddell()
 	{		
 		productID = "";
 		productName = "";
-		productUnits = new int[SIZE];
-		productUnitPrice = new float[SIZE];
 	}
 	
 	/** Parameterized constructor excepting product ID, name, units, and unit price as arguments. */
@@ -71,17 +69,17 @@ public class FA2022_Product_Caddell
 		
 		return "FA2022_SaleProduct_Caddell.java\n"
 			  + "SALE PRODUCT REPORT – CORY CADDELL\n"
-			  + "----------------------------------------------------------\n"
+			  + "------------------------------------------------------------\n"
 			  + String.format("Sale Day: %s\n", formatter.format(date))
 			  + String.format("Product ID: %s\n", productID)
-			  + "----------------------------------------------------------\n"
+			  + "------------------------------------------------------------\n"
 			  + String.format("%-15s%15s%15s%15s\n", "SIZE", "PRICE", "UNITS", "MONEY")
-			  + String.format("%-15s%15.2f%15.2f%15.2f\n", "Product Small:", productUnitPrice[0], productUnits[0], productUnitPrice[0] * productUnitPrice[0])
-			  + String.format("%-15s%15.2f%15.2f%15.2f\n", "Product Medium:", productUnitPrice[1], productUnits[1], productUnitPrice[1] * productUnitPrice[1])
-			  + String.format("%-15s%15.2f%15.2f%15.2f\n", "Product Large:", productUnitPrice[2], productUnits[2], productUnitPrice[2] * productUnitPrice[2])
-			  + "----------------------------------------------------------\n"
-			  + String.format("%-15s%15s%15s%15.2f\n", "Subtotal:", "", "", calculateSaleMoney())
-			  + String.format("%-15s%15s%15s%15.2f\n", "Sales tax:", "", "", calculateSalesTax())
-			  + String.format("%-15s%15s%15s%15.2f\n", "Total", "", "", calculateTotalSaleMoney());
+			  + String.format("%-15s%15.2f%15d%15.2f\n", "Product Small:", productUnitPrice[0], productUnits[0], productUnitPrice[0] * productUnits[0])
+			  + String.format("%-15s%15.2f%15d%15.2f\n", "Product Medium:", productUnitPrice[1], productUnits[1], productUnitPrice[1] * productUnits[1])
+			  + String.format("%-15s%15.2f%15d%15.2f\n", "Product Large:", productUnitPrice[2], productUnits[2], productUnitPrice[2] * productUnits[2])
+			  + "------------------------------------------------------------\n"
+			  + String.format("%-15s%45.2f\n", "Subtotal:", calculateSaleMoney())
+			  + String.format("%-15s%45.2f\n", "Sales tax:", calculateSalesTax())
+			  + String.format("%-15s%45.2f\n", "Total", calculateTotalSaleMoney());
 	}
 }
