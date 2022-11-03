@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class FA2022_Product_Caddell 
 {
-	private int SIZE = 3;
+	private final int SIZE = 3;
 	
 	private String productID;
 	private String productName;
@@ -36,11 +36,52 @@ public class FA2022_Product_Caddell
 		}
 	}
 	
+	/** Mutator method beginning with set */
+	public void setProductID(String id)
+	{
+		productID = id;
+	}
+	public void setProductName(String n)
+	{
+		productName = n;
+	}
+	public void setProductUnits(int[] u)
+	{
+		for (int i = 0; i < u.length; i++)
+		{
+			productUnits[i] = u[i];
+		}
+	}
+	public void setProductUnitPrice(float[] p)
+	{
+		for (int i = 0; i < p.length; i++)
+		{
+			productUnitPrice[i] = p[i];
+		}
+	}
+	
+	/** Accessor methods beginning with get */
+	public String getProductID()
+	{
+		return productID;
+	}
+	public String getProductName()
+	{
+		return productName;
+	}
+	public int[] getProductUnits()
+	{
+		return productUnits;
+	}
+	public float[] getProductUnitPrice()
+	{
+		return productUnitPrice;
+	}
+	
 	/** Method to calculate gross sales */
 	public float calculateSaleMoney()
 	{
 		float totalGrossSales = 0.0f;
-		
 		for (int i = 0; i < SIZE; i++)
 		{
 			totalGrossSales += productUnits[i] * productUnitPrice[i];

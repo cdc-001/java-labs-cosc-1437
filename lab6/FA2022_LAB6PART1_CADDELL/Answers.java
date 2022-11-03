@@ -1,4 +1,7 @@
 
+import java.io.*;
+import java.util.*;
+
 public class Answers 
 {
 	public static void main(String[] args)
@@ -37,7 +40,7 @@ public class Answers
 		 * }
 		 */
 		
-		/*4: !!!!! Not complete !!!!  How to display the object without printing to screen???
+		/*4: 
 		 * public class MorningExcerciseMonitor_Caddell
 		 * {
 		 * 		private String name;
@@ -63,12 +66,40 @@ public class Answers
 		 * 		//Display contents of object to screen
 		 * 		public String toString()
 		 * 		{		 
+		 * 			String distanceDisplay = "";
+		 *	  		for (int i = 0; i < distance.length; i++)
+		 *			{
+		 *				s += ((i > 0) ? ", " : "") + distance[i];  //Ternary used to keep comma from printing after last number.
+		 *			}
+		 * 
 		 * 			return "PERSON\n" +
 		 * 				   "Name = " + name + "\n" +
-		 * 				   "Week Exercise Distance = " + distance[];
+		 * 				   "Week Exercise Distance = " + distanceDisplay);
 		 * 		}
-		 */
-				
+		 */	
 		
+		String name = "Cory";
+		float[] distance = {2.1f, 2.2f, 2.3f, 2.4f, 2.5f, 2.6f, 2.7f};
+		
+		String s = "";
+		
+		for (int i = 0; i < distance.length; i++)
+		{
+			s += ((i > 0) ? ", " : "") + distance[i];
+		}
+		
+		System.out.print("Person\n"
+				+ "Name = " + name +"\n"
+				+ "Week Exercise Distance = " + s);
+		
+		
+	}
+	
+	public static void displayDistance(float[] d)
+	{
+		for (int i = 0; i < d.length; i++)
+		{
+			System.out.print(((i > 0) ? ", " : "") + d[i]);
+		}
 	}
 }
